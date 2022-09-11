@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/login_graph">
+    <navigation android:id="@+id/login_graph"
+        app:startDestination="@id/loginFragment">
+        <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.patika.week3appnavigation.LoginFragment"
+            android:label="LoginFragment"
+            tools:layout="@layout/fragment_login">
+            <action
+                android:id="@+id/action_login_graph_to_main_graph"
+                app:destination="@id/main_graph"
+                app:popUpTo="@id/nav_graph"
+                app:popUpToInclusive="true"/>
+        </fragment>
+    </navigation>
+    <navigation android:id="@+id/main_graph"
+        app:startDestination="@id/mainFragment">
+        <fragment
+            android:id="@+id/mainFragment"
+            android:name="com.patika.week3appnavigation.MainFragment"
+            android:label="fragment_main"
+            tools:layout="@layout/fragment_main" />
+    </navigation>
+</navigation>
